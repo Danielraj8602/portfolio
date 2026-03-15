@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 let width, height;
 let particles = [];
-const numParticles = 800; // Dense, starburst style
+let numParticles = window.innerWidth < 768 ? 200 : 800; // Responsive particle count
 const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
 
 let rotationX = 0;
@@ -16,6 +16,12 @@ function resize() {
     if (hero) {
         width = canvas.width = hero.offsetWidth;
         height = canvas.height = hero.offsetHeight;
+        
+        let newNumParticles = window.innerWidth < 768 ? 200 : 800;
+        if (newNumParticles !== numParticles) {
+            numParticles = newNumParticles;
+            init();
+        }
     }
 }
 
