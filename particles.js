@@ -81,8 +81,8 @@ class Particle {
             
             ctx.strokeStyle = this.color;
             
-            // Fade particles that are further away in the Z-axis
-            const alpha = Math.min(1, Math.max(0.1, (2000 - z) / 1000));
+            // Increase base visibility and minimum alpha
+            const alpha = Math.min(1, Math.max(0.4, (2200 - z) / 1000));
             ctx.globalAlpha = alpha;
             ctx.lineWidth = this.size * scale;
             ctx.lineCap = 'round';
