@@ -1231,6 +1231,12 @@ textarea {
         justify-content: center;
     }
 
+    .contact-container,
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
     .services-grid,
     .portfolio-grid,
     .testimonials-grid,
@@ -1249,5 +1255,13 @@ textarea {
         right: 20px;
         padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    .booking-widget, .contact-form-wrapper {
+        padding: 15px;
+    }
+    
+    .section {
+        padding: 40px 0;
     }
 }
