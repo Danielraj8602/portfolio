@@ -152,9 +152,8 @@ if (hero) {
 function animate() {
     requestAnimationFrame(animate);
     
-    // Instead of clearRect, fill with a semi-transparent white to create a beautiful motion blur / light trail effect
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-    ctx.fillRect(0, 0, width, height);
+    // Clear the canvas completely to remove the motion blur effect
+    ctx.clearRect(0, 0, width, height);
     
     const now = Date.now();
     
