@@ -7,9 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (leadForm) {
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // In a real scenario, handle fetch/ajax submission here.
-            alert('Thank you for your inquiry! I will get back to you shortly.');
-            leadForm.reset();
+            
+            const submitBtn = leadForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(leadForm);
+            
+            // Using FormSubmit.co AJAX API to send email without page reload
+            fetch("https://formsubmit.co/ajax/danielraj8602@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for your inquiry! I will get back to you shortly.');
+                leadForm.reset();
+            })
+            .catch(error => {
+                alert('Oops! There was a problem submitting your form. Please try again or email me directly.');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 
