@@ -426,6 +426,7 @@ img {
 }
 
 .hero-content {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -532,8 +533,14 @@ img {
    ========================================= */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
 }
 
 .portfolio-card {
@@ -745,9 +752,15 @@ img {
    ========================================= */
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     gap: 30px;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 .pricing-card {
