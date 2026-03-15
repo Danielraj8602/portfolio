@@ -132,15 +132,15 @@ if (hero) {
         // e.gamma is the left-to-right tilt in degrees (-90 to 90)
         // e.beta is the front-to-back tilt in degrees (-180 to 180)
         if (e.gamma !== null && e.beta !== null) {
-            // Map gamma (-45 to 45) to roughly -1 to 1
-            let x = e.gamma / 45; 
+            // Increased Sensitivity: Map a smaller tilt (-15 to 15 degrees) to full -1 to 1 offset
+            let x = e.gamma / 15; 
             
-            // Assume 45 degrees is a neutral resting angle, map (-45 to 45 offset)
-            let y = (e.beta - 45) / 45;
+            // Assume 45 degrees is a neutral resting angle, map (-15 to 15 offset)
+            let y = (e.beta - 45) / 15;
 
-            // Clamp values
-            x = Math.max(-1, Math.min(1, x));
-            y = Math.max(-1, Math.min(1, y));
+            // Clamp values heavily so it doesn't spin out of control if over-tilted
+            x = Math.max(-1.5, Math.min(1.5, x));
+            y = Math.max(-1.5, Math.min(1.5, y));
 
             mouse.targetX = x;
             mouse.targetY = -y; // Invert for natural tilt mapping
