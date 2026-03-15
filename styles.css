@@ -1108,6 +1108,15 @@ textarea {
     box-shadow: var(--shadow-md);
     z-index: 999;
     transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.sticky-booking-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .sticky-booking-btn:hover {

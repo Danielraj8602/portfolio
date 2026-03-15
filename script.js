@@ -86,6 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Toggle Sticky Booking Button Visibility
+        const stickyBtn = document.querySelector('.sticky-booking-btn');
+        const heroSection = document.getElementById('home');
+        if (stickyBtn && heroSection) {
+            if (window.scrollY > (heroSection.offsetHeight * 0.5)) {
+                stickyBtn.classList.add('visible');
+            } else {
+                stickyBtn.classList.remove('visible');
+            }
+        }
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
