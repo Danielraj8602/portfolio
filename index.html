@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thrive Digital Agency - Specializing in Web Design, Digital Marketing, and Video Editing.">
+    <title>Thrive Digital Agency | Creative Solutions</title>
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <img src="" alt="Project Image" id="modal-img" class="modal-img">
+                <div class="modal-info">
+                    <div class="portfolio-tags" id="modal-tags"></div>
+                    <h3 id="modal-title">Project Title</h3>
+                    <p id="modal-desc">Detailed description goes here...</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: 20px;">Live Preview</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Thrive<span>Digital</span></a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary btn-sm hidden-mobile">Let's Talk</a>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero" id="home">
+            <!-- Background Canvas -->
+            <canvas id="bg-canvas"></canvas>
+            <div class="hero-bg-animated"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">Available for Work</div>
+                    <h1 class="hero-title">Helping Brands Grow with <span class="text-gradient">Creative Digital
+                            Solutions</span></h1>
+                    <p class="hero-subtitle">Elevate your brand with premium Web Design, data-driven Digital Marketing,
+                        and cinematic Video Editing services.</p>
+
+                    <div class="hero-ctas">
+                        <a href="#portfolio" class="btn btn-primary">View Portfolio <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#booking" class="btn btn-outline">Book a Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Services Section -->
+        <section class="services section" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Expertise</h2>
+                    <p class="section-desc">Comprehensive digital services to transform your online presence.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Web Design</h3>
+                        <p>Beautiful, high-converting websites optimized for performance and user experience.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3>Digital Marketing</h3>
+                        <p>Data-driven strategies to increase brand awareness and generate qualified leads.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-video"></i></div>
+                        <h3>Video Editing</h3>
+                        <p>Engaging cinematic video content tailored for social media and marketing campaigns.</p>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
+                        <h3>Social Media Marketing</h3>
+                        <p>Managing and growing your social profiles with engaging content and strategies.</p>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h3>Landing Page Optimization</h3>
+                        <p>Crafting high-converting landing pages that turn visitors into paying customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Portfolio Section -->
+        <section class="portfolio section bg-alt" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Work</h2>
+                    <p class="section-desc">A selection of my recent projects and case studies.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Project 1 -->
+                    <div class="portfolio-card" data-title="Modern E-Commerce Experience"
+                        data-desc="A complete redesign for a premium fashion brand focusing on mobile conversions and seamless checkout flows integrated with Stripe."
+                        data-tags='["Web Design","React"]'
+                        data-img="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop"
+                                alt="E-Commerce Web Design" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <button class="btn btn-primary view-project-btn">View Details</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tags">
+                                <span>Web Design</span>
+                                <span>React</span>
+                            </div>
+                            <h3>Modern E-Commerce Experience</h3>
+                            <p>A complete redesign for a premium fashion brand focusing on mobile conversions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-card" data-title="SaaS Growth Campaign"
+                        data-desc="A multi-channel marketing campaign across Google Ads and LinkedIn that increased monthly recurring revenue by 140% in just 3 months."
+                        data-tags='["Marketing","Google Ads"]'
+                        data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                                alt="Digital Marketing Campaign" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <button class="btn btn-primary view-project-btn">View Details</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tags">
+                                <span>Marketing</span>
+                                <span>Google Ads</span>
+                            </div>
+                            <h3>SaaS Growth Campaign</h3>
+                            <p>A multi-channel marketing campaign that increased MRR by 140% in 3 months.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-card" data-title="Brand Anthem Highlight Reel"
+                        data-desc="Cinematic storytelling video produced for a tech startup's series A funding round to showcase their vision and mission."
+                        data-tags='["Video","Premiere Pro"]'
+                        data-img="https://images.unsplash.com/photo-1574717024453-354056aaddfa?q=80&w=800&auto=format&fit=crop">
+                        <div class="portfolio-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1574717024453-354056aaddfa?q=80&w=800&auto=format&fit=crop"
+                                alt="Video Editing" loading="lazy">
+                            <div class="portfolio-overlay">
+                                <button class="btn btn-primary view-project-btn">View Details</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <div class="portfolio-tags">
+                                <span>Video</span>
+                                <span>Premiere Pro</span>
+                            </div>
+                            <h3>Brand Anthem Highlight Reel</h3>
+                            <p>Cinematic storytelling video produced for a tech startup's series A funding round.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Client Testimonials -->
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Client Success Stories</h2>
+                    <p class="section-desc">Don't just take my word for it. Here's what my clients say.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with Thrive Digital was a game-changer for our agency. The
+                            new website not only looks stunning but our conversion rates doubled within the first
+                            month."</p>
+                        <div class="client-info">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Sarah Johnson" class="client-img">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <span>CEO, TechFlow App</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The social media marketing campaign and video content produced
+                            exceeded all our expectations. Highly professional, creative, and responsive."</p>
+                        <div class="client-info">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Michael Chen" class="client-img">
+                            <div>
+                                <h4>Prasath Kabilan</h4>
+                                <span>Marketing Director, KeyDraft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Skills & Tools -->
+        <section class="skills section bg-alt" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tools of the Trade</h2>
+                    <p class="section-desc">Mastery over industry-standard tools and technologies.</p>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                    <div class="skill-item"><i class="fa-solid fa-video"></i><span>Adobe Premiere</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-google"></i><span>Google Ads</span></div>
+                    <div class="skill-item"><i class="fa-brands fa-meta"></i><span>Meta Ads</span></div>
+                    <div class="skill-item"><i class="fa-solid fa-chart-line"></i><span>SEO Tools</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Pricing Section -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Transparent Pricing</h2>
+                    <p class="section-desc">Choose a package that fits your business needs.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter -->
+                    <div class="pricing-card">
+                        <h3>Starter</h3>
+                        <div class="price"><span>$</span>999</div>
+                        <p class="pricing-desc">Perfect for small businesses looking to establish an online presence.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> 5-Page Website</li>
+                            <li><i class="fa-solid fa-check"></i> Basic SEO Setup</li>
+                            <li><i class="fa-solid fa-check"></i> Mobile Responsive</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Marketing Strategy</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Video Content</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline btn-block">Choose Starter</a>
+                    </div>
+
+                    <!-- Professional (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Professional</h3>
+                        <div class="price"><span>$</span>2,499</div>
+                        <p class="pricing-desc">Ideal for growing brands needing a complete digital overhaul.</p>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Custom 10-Page Website</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced SEO Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Month Marketing Strategy</li>
+                            <li><i class="fa-solid fa-check"></i> 2 Promo Videos</li>
+                            <li class="disabled"><i class="fa-solid fa-xmark"></i> Dedicated Account Manager</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary btn-block">Choose Professional</a>
+                    </div>
+
+                    <!-- Premium -->
+                    <div class="pricing-card">
+                        <h3>Premium</h3>
+                        <div class="price"><span>$</span>4,999</div>
+                        <p class="pricing-desc">The ultimate package for aggressive growth and market domination.</p>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Unlimited Pages E-Commerce/Web</li>
+                            <li><i class="fa-solid fa-check"></i> Comprehensive SEO & Analytics</li>
+                            <li><i class="fa-solid fa-check"></i> 3 Months Marketing Execution</li>
+                            <li><i class="fa-solid fa-check"></i> 5 High-end Video Commercials</li>
+                            <li><i class="fa-solid fa-check"></i> Dedicated Account Manager</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline btn-block">Choose Premium</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. About Section -->
+        <section class="about section bg-alt" id="about">
+            <div class="container about-container">
+                <div class="about-image-wrapper">
+                    <!-- Professional photo placeholder -->
+                    <img src="C:\Users\lenovo\Desktop\Project\portfolio\Images\WhatsApp Image 2025-04-01 at 17.12.24_126266f4.jpg"
+                        alt="Freelancer Photo" class="about-img">
+                    <div class="about-shape"></div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Hi, I'm Daniel.</h2>
+                    <h3 class="about-subtitle">Creative Director & Digital Strategist</h3>
+                    <p>With over 5 years of experience in the digital space, I help businesses bridge the gap between
+                        stunning design and measurable results.</p>
+                    <p>I don't just build websites or run ads; I craft cohesive digital experiences that tell your
+                        brand's story and turn casual visitors into loyal customers.</p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Avg. Conversion Lift</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 & 8. Contact & Booking Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Start Your Project</h2>
+                    <p class="section-desc">Schedule a meeting or drop a message below to discuss how we can work
+                        together.</p>
+                </div>
+
+                <div class="contact-container" id="booking">
+                    <!-- 7. Booking Embed -->
+                    <div class="booking-widget">
+                        <h3>Schedule a Meeting</h3>
+                        <p>Pick a time that works for you for a free 30-minute discovery call.</p>
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/danielraj8602/30min?hide_gdpr_banner=1"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <!-- 8. Lead Capture Form -->
+                    <div class="contact-form-wrapper">
+                        <h3>Send a Message</h3>
+                        <form id="lead-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="projectType">Project Type</label>
+                                    <select id="projectType" name="projectType">
+                                        <option value="web-design">Web Design</option>
+                                        <option value="marketing">Digital Marketing</option>
+                                        <option value="video">Video Editing</option>
+                                        <option value="full-stack">Full Service Package</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="budget">Budget</label>
+                                    <select id="budget" name="budget">
+                                        <option value="1k-3k">$1,000 - $3,000</option>
+                                        <option value="3k-5k">$3,000 - $5,000</option>
+                                        <option value="5k+">$5,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    placeholder="Tell me about your project goals..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Submit Inquiry <i
+                                    class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Thrive<span>Digital</span></a>
+                <p>Minimal, impactful digital solutions that drive growth and elevate brands.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Work</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-group">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@thrivedigital.com"><i class="fa-solid fa-envelope"></i>
+                                hello@thrivedigital.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone"></i> +1 (234) 567-890</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Thrive Digital Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Book a Call Button -->
+    <a href="#booking" class="sticky-booking-btn">
+        <i class="fa-regular fa-calendar-check"></i> Book Call
+    </a>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
