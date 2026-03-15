@@ -1194,6 +1194,33 @@ textarea {
     .booking-widget, .contact-form-wrapper {
         padding: 24px;
     }
+    
+    .about-content,
+    .section-header {
+        text-align: center;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .testimonial-card,
+    .portfolio-info {
+        text-align: center;
+    }
+
+    .client-info {
+        justify-content: center;
+    }
+
+    .services-grid,
+    .portfolio-grid,
+    .testimonials-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
